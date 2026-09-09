@@ -1,0 +1,200 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: Arial, sans-serif;
+
+    background-color: #eeeeee;
+    color: #333;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+.login-container {
+    width: min(90%, 450px);
+}
+
+.btn-voltar {
+    display: inline-block;
+    margin-bottom: 15px;
+
+    color: #b00000;
+
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.btn-voltar:hover {
+    text-decoration: underline;
+}
+
+.login-card {
+    padding: 40px;
+
+    background-color: #fff;
+
+    border-radius: 12px;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+}
+
+.login-card h1 {
+    margin-bottom: 10px;
+
+    color: #b00000;
+}
+
+.login-card > p {
+    margin-bottom: 30px;
+
+    color: #666;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 20px;
+}
+
+.campo label {
+    margin-bottom: 7px;
+
+    color: #333;
+
+    font-weight: bold;
+}
+
+.campo input {
+    width: 100%;
+    padding: 13px;
+
+    border: 1px solid #ccc;
+    border-radius: 7px;
+
+    color: #333;
+
+    font-size: 16px;
+}
+
+.campo input:focus {
+    outline: none;
+
+    border-color: #c90000;
+}
+
+.senha-container {
+    position: relative;
+
+    width: 100%;
+}
+
+.senha-container input {
+    padding-right: 45px;
+}
+
+.btn-olho {
+    position: absolute;
+    top: 50%;
+    right: 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 28px;
+    height: 28px;
+    padding: 0;
+
+    transform: translateY(-50%);
+
+    border: none;
+    background: none;
+}
+
+.btn-olho svg {
+    width: 20px;
+    height: 20px;
+
+    fill: none;
+    stroke: #666;
+    stroke-width: 1.8;
+
+    transition: stroke 0.2s;
+}
+
+.btn-olho:hover svg {
+    stroke: #c90000;
+}
+
+.btn-login {
+    width: 100%;
+    padding: 14px;
+
+    border: none;
+    border-radius: 7px;
+
+    background-color: #c90000;
+    color: #fff;
+
+    font-size: 17px;
+    font-weight: bold;
+
+    transition: background-color 0.2s;
+}
+
+.btn-login:hover {
+    background-color: #a80000;
+}
+
+.toast {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-20px);
+    background-color: #c90000;
+    color: #fff;
+    padding: 14px 24px;
+    border-radius: 7px;
+    font-weight: bold;
+    font-size: 15px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s, transform 0.3s;
+    z-index: 9999;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+@media (max-width: 500px) {
+    body {
+        padding: 20px;
+    }
+
+    .login-container {
+        width: 100%;
+    }
+
+    .login-card {
+        padding: 30px 25px;
+    }
+}

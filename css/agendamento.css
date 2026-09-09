@@ -1,0 +1,278 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background-color: #eeeeee;
+    color: #333;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+.container-agendamento {
+    width: min(90%, 600px);
+    margin: 50px auto;
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+}
+
+.container-agendamento h1 {
+    margin-bottom: 10px;
+    color: #b00000;
+}
+
+.container-agendamento > p {
+    margin-bottom: 30px;
+    color: #666;
+}
+
+.btn-voltar {
+    display: inline-block;
+    margin-bottom: 25px;
+    color: #b00000;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.btn-voltar:hover {
+    text-decoration: underline;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.campo label {
+    margin-bottom: 12px;
+    margin-top: 12px;
+    color: #333;
+    font-weight: bold;
+}
+
+.campo input {
+    padding: 13px;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    font-size: 16px;
+    color: #333;
+}
+
+.campo input:focus {
+    outline: none;
+    border-color: #c90000;
+}
+
+.area-horarios {
+    margin-top: 30px;
+}
+
+.area-horarios h2 {
+    margin-bottom: 15px;
+    color: #333;
+    font-size: 20px;
+}
+
+.horarios {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.horario {
+    padding: 12px 5px;
+    border: 1px solid #c90000;
+    border-radius: 6px;
+    background-color: #fff;
+    color: #c90000;
+    font-weight: bold;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.horario:hover:not(:disabled) {
+    background-color: #fbeaea;
+}
+
+.horario.selecionado {
+    background-color: #c90000;
+    color: #fff;
+}
+
+.horario.ocupado,
+.horario.bloqueado {
+    border-color: #ccc;
+    background-color: #ccc;
+    color: #777;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.btn-confirmar {
+    width: 100%;
+    margin-top: 30px;
+    padding: 15px;
+    border: none;
+    border-radius: 7px;
+    background-color: #c90000;
+    color: #fff;
+    font-size: 17px;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.btn-confirmar:hover:not(:disabled) {
+    background-color: #a80000;
+}
+
+.btn-confirmar:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.45);
+}
+
+.modal-conteudo {
+    width: 100%;
+    max-width: 420px;
+    padding: 35px;
+    border-radius: 12px;
+    background-color: #fff;
+    text-align: center;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+.icone-sucesso {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    background-color: #c90000;
+    color: #fff;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.modal-conteudo h2 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.modal-conteudo p {
+    margin-bottom: 25px;
+    color: #666;
+    line-height: 1.6;
+}
+
+.btn-modal {
+    width: 100%;
+    padding: 13px;
+    border: none;
+    border-radius: 7px;
+    background-color: #c90000;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.btn-modal:hover {
+    background-color: #a80000;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+}
+
+.modal-box {
+    background-color: #fff;
+    padding: 28px;
+    border-radius: 10px;
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+}
+
+.modal-box p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.modal-botoes {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+}
+
+.btn-confirmar-sim,
+.btn-confirmar-nao {
+    padding: 10px 24px;
+    border: none;
+    border-radius: 7px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-confirmar-sim {
+    background-color: #c90000;
+    color: #fff;
+}
+
+.btn-confirmar-nao {
+    background-color: #eee;
+    color: #333;
+}
+
+@media (max-width: 600px) {
+    .container-agendamento {
+        width: 95%;
+        margin: 20px auto;
+        padding: 25px 20px;
+    }
+
+    .container-agendamento h1 {
+        font-size: 28px;
+    }
+
+    .horarios {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .modal-conteudo {
+        padding: 25px 20px;
+    }
+}

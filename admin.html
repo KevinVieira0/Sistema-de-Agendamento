@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Administração - Agendamento</title>
+
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+
+<body>
+
+    <main class="admin-container">
+
+        <header class="admin-header">
+
+            <div>
+                <h1>Administração da Sala</h1>
+                <p>Gerenciamento de agendamentos</p>
+            </div>
+
+            <button
+                type="button"
+                class="btn-sair"
+                id="btnSair"
+            >
+                Sair
+            </button>
+
+        </header>
+
+        <section class="filtro-data">
+
+            <label for="data">
+                Data dos agendamentos
+            </label>
+
+            <input
+                type="date"
+                id="data"
+                name="data"
+            >
+
+        </section>
+
+        <section class="agenda">
+
+            <header class="agenda-header">
+
+                <h2>Agenda</h2>
+
+                <span id="dataSelecionada">
+                    Selecione uma data
+                </span>
+
+            </header>
+
+            <div class="legenda">
+
+                <span>
+                    <i class="livre"></i>
+                    Livre
+                </span>
+
+                <span>
+                    <i class="agendado"></i>
+                    Agendado
+                </span>
+
+                <span>
+                    <i class="bloqueado"></i>
+                    Bloqueado
+                </span>
+
+            </div>
+
+            <div
+                class="horarios"
+                id="horarios"
+            ></div>
+
+            
+            <button
+                type="button"
+                class="btn-bloquear"
+                id="btnBloquear"
+            >
+                + Bloquear horário
+            </button>
+
+        </section>
+
+    </main>
+
+    <div id="modalConfirmar" class="modal-overlay" style="display:none;">
+        <div class="modal-box">
+            <p id="modalConfirmarTexto"></p>
+            <div class="modal-botoes">
+                <button id="modalConfirmarSim" class="btn-confirmar-sim">Sim</button>
+                <button id="modalConfirmarNao" class="btn-confirmar-nao">Cancelar</button>
+            </div>
+        </div>
+    </div>
+    
+    <div id="toastContainer" class="toast-container"></div>
+    <script src="js/admin.js"></script>
+    <script src="js/logout.js"></script>
+
+</body>
+
+</html>

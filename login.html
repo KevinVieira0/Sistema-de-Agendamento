@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Administração</title>
+
+    <link rel="stylesheet" href="css/login.css">
+</head>
+
+<body>
+
+    <main class="login-container">
+
+        <a href="index.html" class="btn-voltar">
+            ← Voltar
+        </a>
+
+        <section class="login-card">
+
+            <header>
+                <h1>Administração</h1>
+                <p>Acesse o painel de gerenciamento da sala.</p>
+            </header>
+
+            <form id="loginForm">
+
+                <div class="campo">
+
+                    <label for="cpf">CPF</label>
+
+                    <input
+                        type="text"
+                        id="cpf"
+                        name="cpf"
+                        placeholder="Digite seu CPF"
+                        maxlength="14"
+                        inputmode="numeric"
+                        autocomplete="username"
+                        required
+                    >
+
+                </div>
+
+                <div class="campo">
+
+                    <label for="senha">Senha</label>
+
+                    <div class="senha-container">
+
+                        <input
+                            type="password"
+                            id="senha"
+                            name="senha"
+                            placeholder="Digite sua senha"
+                            autocomplete="current-password"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            class="btn-olho"
+                            id="toggleSenha"
+                            aria-label="Mostrar senha"
+                        >
+
+                            <svg
+                                id="iconeOlho"
+                                viewBox="0 0 24 24"
+                                aria-hidden="true"
+                            >
+                                <path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12Z"></path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                            </svg>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <button
+                    type="submit"
+                    class="btn-login"
+                    id="btnLogin"
+                >
+                    Entrar
+                </button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+    <div id="toast" class="toast"></div>
+    <script src="js/login.js"></script>
+
+</body>
+
+</html>
